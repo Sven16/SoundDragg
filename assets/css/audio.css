@@ -1,0 +1,51 @@
+body {
+	background-color: #d6ccc0;
+	font-family: 'Gloria Hallelujah', cursive;
+}
+
+h1 {
+	text-shadow: 2px 2px 8px #abdff2;
+}
+
+.circle {
+  	border-radius: 50%;
+  	height: 250px;
+  	width: 250px;
+  	margin: 0 0 0 50px;
+  	border-style: solid;
+  	display: block;
+  	position: relative;
+}
+
+.thumbnail {
+	border-radius: 50%;
+	height: 60px;
+  	width: 60px;
+  	background-size: cover;
+  	background-position: center;
+  	transition: border-radius 250ms;
+  	background-color: #d6ccc0;
+  	border: none;
+}
+
+.thumbnail:hover {
+	border-radius: 0;
+}
+
+.search {
+	margin-top: 30px;
+}
+
+.form-control, .dropdown-toggle {
+	background-color: #d6ccc0;
+	border: none;
+}
+
+.two-down {
+	margin-top: 30px;
+}
+
+.circle .small-circle, 
+.circle .thumbnail {
+	margin: 0;
+}

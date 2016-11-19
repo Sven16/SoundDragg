@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Images and Text to Audio</title>
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="audio.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body>
+    <div class="container">
+	    <div class="page-header">
+	        <div class="row">
+	            <div class="col-md-3">
+	                <h1 id = "title">SoundDragg</h1>
+	            </div>
+	            <div class="col-md-9">
+		            <form class = "search-bar">
+		                <div class="input-group search">		               
+		                    <input type="text" class="form-control" aria-label="..." placeholder="hello. type anything to get images or text. click the dropdown for general suggestions">
+		                    <div class="input-group-btn">
+		                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Search <span class="caret"></span></button>
+		                            <ul class="dropdown-menu dropdown-menu-right">
+		                                <li><a href="#">Space</a></li>
+		                                <li><a href="#">Earth</a></li>
+		                                <li><a href="#">Human</a></li>
+		                                <li><a href="#">Animal</a></li>
+		                            </ul>
+		                    </div>		               
+		                </div>
+		            </form>
+	            </div>
+	    	</div>
+	    </div>        
+	</div>
+<br>
+<br>
+    <div class="container">
+        <div class="row">
+        	<div class="col-md-1 dragg"></div>
+        	<div class="col-md-1 dragg"></div>
+            <div class="col-md-1 dragg">
+                <div class = "col-md-6-vertical-align two-down dragImg small-circle thumbnail"></div>
+                <div class = "col-md-6-vertical-align two-down dragImg small-circle thumbnail"></div>
+            </div>
+            <div class="col-md-1 dragg">
+                <div class="col-md-4-vertical-align dragImg small-circle thumbnail"></div>
+                <div class="col-md-4-vertical-align dragImg small-circle thumbnail"></div>
+                <div class="col-md-4-vertical-align dragImg small-circle thumbnail"></div>
+            </div>
+            <div class="col-md-4">
+                	<div class="circle dropp"></div>
+            </div>
+            <div class="col-md-1 dragg">
+                <div class="col-md-4-vertical-align dragImg small-circle thumbnail"></div>
+                <div class="col-md-4-vertical-align dragImg small-circle thumbnail"></div>
+                <div class="col-md-4-vertical-align dragImg small-circle thumbnail"></div>
+            </div>
+            <div class="col-md-1 dragg">
+                <div class="col-md-6-vertical-align two-down dragImg small-circle thumbnail"></div>
+                <div class="col-md-6-vertical-align two-down dragImg small-circle thumbnail"></div>
+            </div>
+            <div class="col-md-1 dragg"></div>
+            <div class="col-md-1 dragg"></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="audio.js"></script>
+    <script type="text/javascript" src="audioimages.js"></script>
+</body>
+
+</html>

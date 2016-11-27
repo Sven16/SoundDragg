@@ -5,7 +5,7 @@
    <meta charset="UTF-8">
    <title>save image to node</title>
    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Six+Caps|Share+Techno+Mono|Bungee+Hairline" rel="stylesheet">
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
      <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
      <link rel="stylesheet" href="./css/animate.css">
@@ -25,7 +25,7 @@
 </head> 
 <body>
 
-<div class="row">
+
 <div id="form-div">
     <form class="form search" id="form1">
       <p class="name">
@@ -33,109 +33,90 @@
       </p>
     </form>
 </div>
-</div>
 <!-- <section class="block container"> -->
 <div style="display:none;" id="putImageHere"></div>
 <canvas id="viewport" height="800" width="800"></canvas>
-</div>
-</section>
-    <div class="wrapper">
-      	<div class="page-header">
-          <!-- <div class="row"> -->
-              <!-- <div class="col-md-3"> -->
-                  <!-- <h1 id = "title">SoundDragg</h1> -->
-              <!-- </div> -->
-              <!-- <div class="col-md-9"> -->
-                <!-- <form class = "search-bar">
-                    <div class="input-group search">                   
-                        <input type="text" class="form-control" aria-label="..." placeholder="hello. type anything to get images or text. click the dropdown for general suggestions">
-                        <div class="input-group-btn">
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Search <span class="caret"></span></button>
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a href="#">Space</a></li>
-                                    <li><a href="#">Earth</a></li>
-                                    <li><a href="#">Human</a></li>
-                                    <li><a href="#">Animal</a></li>
-                                </ul>
-                        </div>                   
-                    </div>
-                </form> -->
-            </div>
-        </div>
-      </div>        
-  </div>
-<br>
-<br>
-
 <div id="color-sphere"></div>
-
     <div class="wrapper">
     	<div class="circle dropp"></div>
     	<div class="circle2 dropp2"></div>
+    	<div class="circle3 dropp3">
+    		<div id="inner-circle"></div>
+    	</div>
+    	<div class="circle4 dropp4">
+    		<p id="bitcrusher">bitcrusher</p>
+    	</div>
+    	<div class="circle5 dropp5">
+    		<p id="tremolo">tremolo</p>
+    	</div>
 <!-- <div id="canvasDiv"></div> -->
         <!-- <div class="row row1"> -->
-	        <div class="dragg animated slideInRight">
-	        	<div class = "two-down dragImg small-circle thumbnail top1 up0" id="sphere1"></div>
+        <div class="drag-contain animated slideInUp">
+	        <div class="dragg">
+	        	<div class = "two-down dragImg small-circle thumbnail top1 up0" id="img1"></div>
 	        </div>
 	        <div class="dragg">
-	        	<div class = "two-down dragImg small-circle thumbnail top2 up1" id="sphere2"></div>
+	        	<div class = "two-down dragImg small-circle thumbnail top2 up1" id="img2"></div>
 	        </div>
             <div class="dragg">
-				<div class = "two-down dragImg small-circle thumbnail top2 up2" id="sphere3"></div>
+				<div class = "two-down dragImg small-circle thumbnail top2 up2" id="img3"></div>
 			</div>
             <div class="dragg">
-                <div class = "two-down dragImg small-circle thumbnail top2 up3" id="sphere4"></div>
+                <div class = "two-down dragImg small-circle thumbnail top2 up3" id="img4"></div>
             </div>
             <div class="dragg">
-	        	<div class = "two-down dragImg small-circle thumbnail top2 up4" id="sphere5"></div>
+	        	<div class = "two-down dragImg small-circle thumbnail top2 up4" id="img5"></div>
 	        </div>
             <div class="dragg">
-				<div class = "two-down dragImg small-circle thumbnail top2 up4" id="sphere6"></div>
+				<div class = "two-down dragImg small-circle thumbnail top2 up4" id="img6"></div>
 			</div>
             <div class="dragg">
-                <div class = "two-down dragImg small-circle thumbnail top2 up3" id="sphere7"></div>
+                <div class = "two-down dragImg small-circle thumbnail top2 up3" id="img7"></div>
             </div>
             <div class="dragg">
-				<div class = "two-down dragImg small-circle thumbnail top2 up2" id="sphere8"></div>
+				<div class = "two-down dragImg small-circle thumbnail top2 up2" id="img8"></div>
 			</div>
             <div class="dragg">
-                <div class = "two-down dragImg small-circle thumbnail top2 up1" id="sphere9"></div>
+                <div class = "two-down dragImg small-circle thumbnail top2 up1" id="img9"></div>
             </div>
             <div class="dragg">
-				<div class = "two-down dragImg small-circle thumbnail top2" id="sphere10"></div>
+				<div class = "two-down dragImg small-circle thumbnail top2" id="img10"></div>
 			</div>
         </div>
-
-        <!-- <div class="row row2"> -->
-        	<!-- <div class="col-md-4 dragg"></div>
-            <div class="col-md-1 dragg">
-				<div class = "col-md-6-vertical-align two-down dragImg small-circle thumbnail top2"></div>
-			</div> -->
-    <!-- </div> -->
-        <!--     <div class="col-md-1 dragg">
-                <div class="col-md-4-vertical-align dragImg small-circle thumbnail"></div>
-                <div class="col-md-4-vertical-align dragImg small-circle thumbnail"></div>
-                <div class="col-md-4-vertical-align dragImg small-circle thumbnail"></div>
-            </div> -->
-            <!-- <div class="col-md-6"> -->
-                  <!-- <div class="circle dropp"></div> -->
-            <!-- </div> -->
-            <!-- <div class="col-md-1 dragg">
-                <div class="col-md-4-vertical-align dragImg small-circle thumbnail"></div>
-                <div class="col-md-4-vertical-align dragImg small-circle thumbnail"></div>
-                <div class="col-md-4-vertical-align dragImg small-circle thumbnail"></div>
-            </div> -->
-     <!--        <div class="col-md-1 dragg" id="go-right">
-                <div class="col-md-6-vertical-align two-down dragImg small-circle thumbnail"></div>
-                <div class="col-md-6-vertical-align two-down dragImg small-circle thumbnail"></div>
+        <div class="drag-contain2 animated slideInUp">
+	        <div class="dragg">
+	        	<div class = "two-down node small-circle thumbnail2 top1 up0" id="sphere1"></div>
+	        </div>
+	        <div class="dragg">
+	        	<div class = "two-down node small-circle thumbnail2 top2 up1" id="sphere2"></div>
+	        </div>
+            <div class="dragg">
+				<div class = "two-down node small-circle thumbnail2 top2 up2" id="sphere3"></div>
+			</div>
+            <div class="dragg">
+                <div class = "two-down node small-circle thumbnail2 top2 up3" id="sphere4"></div>
             </div>
-            <div class="col-md-1 dragg"></div>
-            <div class="col-md-1 dragg"></div>
-        </div> -->
-
+            <div class="dragg">
+	        	<div class = "two-down node small-circle thumbnail2 top2 up4" id="sphere5"></div>
+	        </div>
+            <div class="dragg">
+				<div class = "two-down node small-circle thumbnail2 top2 up4" id="sphere6"></div>
+			</div>
+            <div class="dragg">
+                <div class = "two-down node small-circle thumbnail2 top2 up3" id="sphere7"></div>
+            </div>
+            <div class="dragg">
+				<div class = "two-down node small-circle thumbnail2 top2 up2" id="sphere8"></div>
+			</div>
+            <div class="dragg">
+                <div class = "two-down node small-circle thumbnail2 top2 up1" id="sphere9"></div>
+            </div>
+            <div class="dragg">
+				<div class = "two-down node small-circle thumbnail2 top2" id="sphere10"></div>
+			</div>
+        </div>
         <canvas class="visualizer" id="width" ></canvas> 
         <canvas id="myCanvas" ></canvas><br>
-
         <form class="controls">
             <div>
                 <select id="visual" name="visual"></select>
@@ -143,7 +124,7 @@
         </form>
     </div>
     <div id="vid-contain">
-    <video></video>
+    	<video></video>
     </div>
 </body>
 	<script src="./theJS.js"></script>

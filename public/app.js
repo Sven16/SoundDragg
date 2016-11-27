@@ -61,15 +61,16 @@ var delay = new tuna.Delay({
 var bitcrusher = new tuna.Bitcrusher({
     bits: 4,          //1 to 16
     normfreq: 0.1,    //0 to 1
-    bufferSize: 4096  //256 to 16384
+    bufferSize: 4096,  //256 to 16384
+    bypass: 1
 });
 
 var overdrive = new tuna.Overdrive({
     outputGain: 0.5,         //0 to 1+
     drive: 0.7,              //0 to 1
     curveAmount: 1,          //0 to 1
-    algorithmIndex: 0,       //0 to 5, selects one of our drive algorithms
-    bypass: 0
+    algorithmIndex: 3,       //0 to 5, selects one of our drive algorithms
+    bypass: 1
 });
 
 var panner = new tuna.Panner({
@@ -92,12 +93,22 @@ var wahwah = new tuna.WahWah({
     bypass: 0
 });
 
+var tremolo = new tuna.Tremolo({
+    intensity: 0.3,    //0 to 1
+    rate: 4,         //0.001 to 8
+    stereoPhase: 0,    //0 to 180
+    bypass: 1
+});
+
 
 var FilterSample = {
     FREQ_MUL: 7000,
     QUAL_MUL: 30,
     playing: false
 };
+
+var limiter = audioCtx.createDynamicsCompressor();
+limiter.threshold.value = 0.0;
 
 var distortion = audioCtx.createWaveShaper();
 var gainNode = audioCtx.createGain();
@@ -118,21 +129,23 @@ FilterSample.play = function(buffer, gain) {
     gainNode.gain.value = gain;
     convolver.normalize = true; // must be set before the buffer, to take effect
     convolver.buffer = soundBuffer;
-    source.connect(wahwah);
+    source.connect(overdrive);
+    overdrive.connect(bitcrusher);
+    bitcrusher.connect(tremolo);
+    tremolo.connect(gainNode);
     // filter.connect(overdrive);
     // filter.connect(analyser);
     // overdrive.connect(analyser);
     // moog.connnect(analyser);
     // moog.connect(distortion);
-    wahwah.connect(bitcrusher);
-    bitcrusher.connect(gainNode);
-    gainNode.connect(analyser);
+    // delay.connect(context.destination);
+    // filter.connect(context.destination);
     // gain.connect(convolver);
     // convolver.connect(gainNode);
     // gainNode.connect(analyser);
+    gainNode.connect(limiter);
+    limiter.connect(analyser);
     analyser.connect(audioCtx.destination);
-    // delay.connect(context.destination);
-    // filter.connect(context.destination);
     // if (!source.start)
     //   source.start = source.noteOn;
     source.start(0);
@@ -201,7 +214,7 @@ function visualize() {
       canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
 
       canvasCtx.lineWidth = 2;
-      canvasCtx.strokeStyle = 'rgb(0, 0, 0)';
+      canvasCtx.strokeStyle = 'rgb(255, 255, 255)';
 
       canvasCtx.beginPath();
 

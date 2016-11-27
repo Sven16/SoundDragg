@@ -1,0 +1,209 @@
+html {
+  margin: 0;
+}
+body {
+  background-color: white;
+  font-family: 'Gloria Hallelujah', cursive;
+  position: relative;
+/*  background-image: url('images/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;*/
+}
+#canvasDiv {
+  z-index: 5;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+.circle {
+    border-radius: 50%;
+    height: 500px;
+    width: 500px;
+    margin-left: 33.3%;
+    margin-top: 40px;
+    border:2px solid white;
+    display: block;
+    position: absolute;
+    background-image: url('images/emptycrop6.jpg');
+/*    filter: invert(100%);
+    -webkit-filter: invert(100%);*/
+    /*background-repeat: no-repeat;*/
+    /*background-attachment: fixed;*/
+    background-position: center;
+}
+.circle2 {
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    margin-left: 20%;
+    margin-top: 40px;
+    border:2px solid grey;
+    display: block;
+    position: absolute;
+    /*background-image: url('images/emptycrop6.jpg');*/
+/*    filter: invert(100%);
+    -webkit-filter: invert(100%);*/
+    /*background-repeat: no-repeat;*/
+    /*background-attachment: fixed;*/
+    background-position: center;
+}
+.circle .small-circle, 
+.circle .thumbnail {
+  /*margin: 0;*/
+}
+#color-sphere {
+  border-radius: 50%;
+  width: 275px;
+  height: 275px;
+  background-color: black;
+  position: absolute;
+  margin-left: 41.45%;
+  margin-top: 152px;
+  z-index: 1;
+  border: 2px solid black;
+  box-shadow: 0 0 80px 35px black inset;
+/*  box-shadow: 0 0 25px 5px black;*/
+}
+.dragg {
+  height: 60px;
+  z-index: 2;
+}
+.dragImg {
+  /*z-index: 2;*/
+}
+.feedback-input {
+  color:black;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  background-color: white;
+  font-size: 23px;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-width: 0 0 3px 0;
+  box-shadow: 0px 10px 20px #9e9e9e;
+  line-height: 22px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  /*margin-bottom: 10px;*/
+  background-color: transparent;
+  margin-top: 25px;
+}
+.form {
+  text-align: center;
+}
+#form-div {
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  background-color: transparent;
+  right: 25px;
+  /*text-align: center;*/
+
+}
+#go-right {
+  padding-left: 60px;
+}
+input {
+  width: 95%;
+  margin-left: 2.5%;
+    display: inline-block;
+    transition: all 0.3s ease-out;
+  text-align: center;
+
+
+}
+input:focus{
+    outline: none;
+}
+#myCanvas {
+  width: 100%;
+  display: none;
+}
+.row1 {
+/*  padding-top: 0px;
+  margin-bottom: 0px;
+  height: 60px;*/
+  position: fixed;
+  width: 100%;
+  bottom: 400px;
+  margin-left: 5px;
+}
+.row2 {
+   /*margin-top: 0px;*/
+}
+/*.small-circle {
+  border-color: grey;
+}*/
+.thumbnail {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  background-size: cover;
+  background-position: center;
+  transition: border-radius 250ms;
+  background-color: transparent;
+  border: 1px solid grey;
+}
+.thumbnail:hover {
+  border-radius: 0;
+}
+/*.top1 {
+  margin-left: 140px;
+}
+.top2 {
+  margin-left: 25px;
+}*/
+/*.up0 {
+  margin-left: 125px;
+}
+.up1 {
+  margin-top: 75px;
+}
+.up2 {
+  margin-top: 175px;
+}
+.up3 {
+  margin-top: 275px;
+}
+.up4 {
+  margin-top: 330px;
+}*/
+#viewport {
+  display: none;
+}
+#visual {
+  display: none;
+}
+#vid-contain {
+    position: absolute;
+    width: 225px;
+    overflow: hidden;
+    border-radius: 50%;
+    top: 0;
+    z-index: 3;
+    margin-left: 43.3%;
+    margin-top: 290px;
+
+
+}
+video {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: 300px;
+
+}
+.visualizer {
+  /*margin-top: 100px;*/
+  width: 100%;
+  display: none;
+  position: fixed;
+  bottom: 0px;
+  z-index: -1;
+}
+.wrapper {
+  position: relative;
+  width: 100%;
+}

@@ -1,1 +1,2 @@
-# Group_Project_1
+# pull-demo
+<strong>quick start:</strong> npm run setup 

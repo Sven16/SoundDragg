@@ -60,6 +60,7 @@ const setApp = () => {
         theImageHoldThing.innerHTML += createImgTagString(imageObject);
         make_base(imageObject.newImgSrc, imageObject.imageID);
         newSrc = imageObject.newImgSrc;
+        
 
         // console.log(newSrc);
         // newSrc.push(make_base);
@@ -82,17 +83,45 @@ const setApp = () => {
     $('input').on('click', function() {
         $(this).val('');
     });
+     $('#color-sphere').mouseenter(function() {
+        $('.circle').css('transform', 'scale(.85)');
+    });
+     $('#color-sphere').mouseleave(function() {
+        $('.circle').css('transform', 'scale(1)');
+    });
+    $('.circle2').mouseenter(function() {
+        $('#ping').css('opacity', '.5');
+    });
+    $('.circle2').mouseleave(function() {
+        $('#ping').css('opacity', '0');
+    });
+     $('.circle3').mouseenter(function() {
+        $('#overdrive').css('opacity', '.5');
+        $('#inner-circle').css('opacity', '1');
+    });
+    $('.circle3').mouseleave(function() {
+        $('#overdrive').css('opacity', '0');
+        $('#inner-circle').css('opacity', '.5');
+    });
     $('.circle4').mouseenter(function() {
         $('#bitcrusher').css('opacity', '.5');
+        $(this).css('background-color', 'transparent');
     });
     $('.circle4').mouseleave(function() {
         $('#bitcrusher').css('opacity', '0');
+        $(this).css('background-color', 'rgba(214,204,192, .1)');
     });
     $('.circle5').mouseenter(function() {
         $('#tremolo').css('opacity', '.5');
     });
     $('.circle5').mouseleave(function() {
         $('#tremolo').css('opacity', '0');
+    });
+    $('.circle6').mouseenter(function() {
+        $('#phaser').css('opacity', '.5');
+    });
+    $('.circle6').mouseleave(function() {
+        $('#phaser').css('opacity', '0');
     });
 
     var randScale = 20;
@@ -106,7 +135,8 @@ const setApp = () => {
         $dropp2 = $(".dropp2"),
         $dropp3 = $(".dropp3"),
         $dropp4 = $(".dropp4");
-    $dropp5 = $(".dropp5");
+        $dropp5 = $(".dropp5");
+        $dropp6 = $(".dropp6");
 
     var counts = [0];
     var resizeOpts = {
@@ -127,8 +157,9 @@ const setApp = () => {
     $dropp2.droppable({
         drop: function(event, ui) {
             if (ui.draggable.hasClass("node")) {
-                gainNode.gain.value = 1;
-                gain = gainNode.gain.value;
+                // gainNode.gain.value = 1;
+                // gain = gainNode.gain.value;
+                pingPongDelay.bypass = 0;
                 $(ui.draggable.context).css({
                     'background-color': 'white',
                     'width': randScale,
@@ -168,6 +199,19 @@ const setApp = () => {
         drop: function(event, ui) {
             if (ui.draggable.hasClass("node")) {
                 tremolo.bypass = 0;
+                $(ui.draggable.context).css({
+                    'background-color': 'white',
+                    'width': randScale,
+                    'height': randScale
+                });
+            }
+        }
+    });
+
+    $dropp6.droppable({
+        drop: function(event, ui) {
+            if (ui.draggable.hasClass("node")) {
+                phaser.bypass = 0;
                 $(ui.draggable.context).css({
                     'background-color': 'white',
                     'width': randScale,

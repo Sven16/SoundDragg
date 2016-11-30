@@ -36,10 +36,11 @@ analyser.maxDecibels = -10;
 analyser.smoothingTimeConstant = 0.85;
 
 var pingPongDelay = new tuna.PingPongDelay({
-    wetLevel: 0.5, //0 to 1
-    feedback: 0.3, //0 to 1
+    wetLevel: 1, //0 to 1
+    feedback: .5, //0 to 1
     delayTimeLeft: 150, //1 to 10000 (milliseconds)
-    delayTimeRight: 200 //1 to 10000 (milliseconds)
+    delayTimeRight: 200, //1 to 10000 (milliseconds)
+    bypass: 1
 });
 
 var chorus = new tuna.Chorus({
@@ -100,6 +101,20 @@ var tremolo = new tuna.Tremolo({
     bypass: 1
 });
 
+var cabinet = new tuna.Cabinet({
+    makeupGain: 1,                                 //0 to 20
+    impulsePath: "impulses/impulse_guitar.wav",    //path to your speaker impulse
+    bypass: 0
+});
+
+var phaser = new tuna.Phaser({
+    rate: 1.2,                     //0.01 to 8 is a decent range, but higher values are possible
+    depth: 0.8,                    //0 to 1
+    feedback: 0.8,                 //0 to 1+
+    stereoPhase: 30,               //0 to 180
+    baseModulationFrequency: 700,  //500 to 1500
+    bypass: 1
+});
 
 var FilterSample = {
     FREQ_MUL: 7000,
@@ -129,10 +144,14 @@ FilterSample.play = function(buffer, gain) {
     gainNode.gain.value = gain;
     convolver.normalize = true; // must be set before the buffer, to take effect
     convolver.buffer = soundBuffer;
+    // source.connect(filter);
     source.connect(overdrive);
     overdrive.connect(bitcrusher);
     bitcrusher.connect(tremolo);
-    tremolo.connect(gainNode);
+    tremolo.connect(phaser);
+    phaser.connect(pingPongDelay);
+    pingPongDelay.connect(gainNode);
+    // convolver.connect(gainNode);
     // filter.connect(overdrive);
     // filter.connect(analyser);
     // overdrive.connect(analyser);
@@ -196,7 +215,7 @@ function visualize() {
   // console.log(visualSetting);
 
   // if(visualSetting == "sinewave") {
-    analyser.fftSize = 512;
+    analyser.fftSize = 2048;
     var bufferLength = analyser.fftSize;
     // console.log(bufferLength);
     var dataArray = new Uint8Array(bufferLength);

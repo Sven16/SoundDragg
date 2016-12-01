@@ -1,7 +1,3 @@
-// var xhrPost;
-// var takeImageAndDoStuff;
-// var createImgTagString;
-// var make_base;
 
 var URL;
 var update_img;
@@ -50,7 +46,7 @@ const setApp = () => {
         request.send(data);
 
     };
-    // var newSrc = [];
+
     const createImgTagString = (imgOBJ) => {
         return '<img  id="' + imgOBJ.imageID + '" src="' + imgOBJ.newImgSrc + '">';
     }
@@ -60,74 +56,11 @@ const setApp = () => {
         theImageHoldThing.innerHTML += createImgTagString(imageObject);
         make_base(imageObject.newImgSrc, imageObject.imageID);
         newSrc = imageObject.newImgSrc;
-        
-
-        // console.log(newSrc);
-        // newSrc.push(make_base);
-        // return imageObject.newImgSrc;
-
     }
-
-
-    // document.querySelector('#toggleView').onclick = () => {
-    //   let currentStyle =  theImageHoldThing.style.display;
-    //   theImageHoldThing.style.display = currentStyle === 'none' ? 'block' : 'none';
-    // }
-    // document.querySelector('#getIMG').onclick = () => {
-    //   var inputValue = document.querySelector('#imgSrc').value.trim();
-    //   if(!imagesSent[inputValue]){
-    //     xhrPost(inputValue, takeImageAndDoStuff);
-    //   }
-    // }
-
-    $('input').on('click', function() {
-        $(this).val('');
-    });
-     $('#color-sphere').mouseenter(function() {
-        $('.circle').css('transform', 'scale(.85)');
-    });
-     $('#color-sphere').mouseleave(function() {
-        $('.circle').css('transform', 'scale(1)');
-    });
-    $('.circle2').mouseenter(function() {
-        $('#ping').css('opacity', '.5');
-    });
-    $('.circle2').mouseleave(function() {
-        $('#ping').css('opacity', '0');
-    });
-     $('.circle3').mouseenter(function() {
-        $('#overdrive').css('opacity', '.5');
-        $('#inner-circle').css('opacity', '1');
-    });
-    $('.circle3').mouseleave(function() {
-        $('#overdrive').css('opacity', '0');
-        $('#inner-circle').css('opacity', '.5');
-    });
-    $('.circle4').mouseenter(function() {
-        $('#bitcrusher').css('opacity', '.5');
-        $(this).css('background-color', 'transparent');
-    });
-    $('.circle4').mouseleave(function() {
-        $('#bitcrusher').css('opacity', '0');
-        $(this).css('background-color', 'rgba(214,204,192, .1)');
-    });
-    $('.circle5').mouseenter(function() {
-        $('#tremolo').css('opacity', '.5');
-    });
-    $('.circle5').mouseleave(function() {
-        $('#tremolo').css('opacity', '0');
-    });
-    $('.circle6').mouseenter(function() {
-        $('#phaser').css('opacity', '.5');
-    });
-    $('.circle6').mouseleave(function() {
-        $('#phaser').css('opacity', '0');
-    });
 
     var randScale = 20;
     $('.node').on('click', function() {
         randScale = Math.floor(Math.random() * 30) + 5;
-        console.log(randScale);
     })
 
     var $dragg = $(".dragg"),
@@ -152,7 +85,7 @@ const setApp = () => {
         cursor: "move", //cursor indicates moving
     });
 
-    var gain = 10;
+    // var gain = 10;
 
     $dropp2.droppable({
         drop: function(event, ui) {
@@ -231,17 +164,6 @@ const setApp = () => {
             if (ui.draggable.hasClass("dragImg")) {
                 var imgThing = $(ui.draggable.context).data('url');
                 var chosenWave = $(ui.draggable.context).data('randomWave');
-                // var clone = $(ui.helper).clone();
-                // var uiOffset = ui.helper.offset();
-                // var offset = $(this).offset();
-                // var helperMarginTop = ui.helper.css("margin-top");
-                // clone.css({
-                //   top: uiOffset.top - offset.top, 
-                //   left: uiOffset.left - offset.left,
-                // });
-                // clone.css('zIndex', '3');
-                // $(this).append(clone);
-                // points to dragImg and adds new class
                 $(".dropp .dragImg").addClass("item-" + counts[0]);
                 $(".dropp .img").addClass("imgSize-" + counts[0]);
                 $(".dropp .item-" + counts[0]).removeClass("dragImg ui-draggable ui-draggable-dragging");
@@ -264,23 +186,21 @@ const setApp = () => {
                             var avRGB = Math.floor((avR + avG + avB) / 3);
                             colorRGB.push(avRGB);
                             colorToLetter.push(String.fromCharCode(avRGB));
-                            console.log(String.fromCharCode(avRGB));
                         }
                     }
                     $('input').val(colorToLetter.toString());
-                    console.log(colorRGB);
                     callback();
                 }
+
+                // function startWorker(chosenWave) {
+                //     var w = new Worker("worker.js");
+                // }
                 var wait = setTimeout(oneSec, 1000);
 
                 function oneSec() {
-                    console.log(newSrc);
                     handleFiles(newSrc, chosenWave);
-                    loadSound(audio.src, gain);
-                    // console.log(colorR.length);
+                    loadSound(audio.src);
                     arrayAverage(run);
-                    // run();
-
                 }
 
                 function run() {
@@ -290,10 +210,7 @@ const setApp = () => {
                 function decrement() {
                     $('#color-sphere').css('background-color', 'rgb(' + colorR[countColor] + ',' + colorG[countColor] + ',' + colorB[countColor] + ')');
                     countColor++;
-                    console.log(countColor);
-                    console.log(colorR.length / 8);
                     if (countColor > colorR.length / 8) {
-                        console.log('hey');
                         stop();
                     }
                 }
@@ -302,16 +219,11 @@ const setApp = () => {
                     clearInterval(counter);
                     countColor = 0;
                     $('#color-sphere').css('background-color', 'transparent');
-                }
-                // var wait2 = setTimeout(oneSec2, 1000);
-                // function oneSec2() {
-                //   loadSound(audio.src);
-                // }
-                // handleFiles(URL);
-                // loadSound(audio.src);  
+                } 
             }
         }
     });
+
     //set to position absolute
     var zIndex = 0;
 
@@ -322,8 +234,5 @@ const setApp = () => {
             stop: function(event, ui) {}
         });
     }
-
-
-
 };
 setApp();

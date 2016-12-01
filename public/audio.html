@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Images and Text to Audio</title>
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/audio2.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body>
+    <div id="form-div">
+    <form class="form" id="form1">
+      <p class="name">
+        <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input"  id="name" autocomplete="off"/>
+      </p>
+    </form>
+<br>
+<br>
+    <div class="wrapper">
+        <div class="row">
+          <div class="col-md-1 dragg"></div>
+          <div class="col-md-1 dragg"></div>
+            <div class="col-md-1 dragg">
+                <div class = "col-md-6-vertical-align two-down dragImg small-circle thumbnail"></div>
+                <div class = "col-md-6-vertical-align two-down dragImg small-circle thumbnail"></div>
+            </div>
+            <div class="col-md-1 dragg">
+                <div class="col-md-4-vertical-align dragImg small-circle thumbnail"></div>
+                <div class="col-md-4-vertical-align dragImg small-circle thumbnail"></div>
+                <div class="col-md-4-vertical-align dragImg small-circle thumbnail"></div>
+            </div>
+            <div class="col-md-4">
+                  <div class="circle dropp"></div>
+            </div>
+            <div class="col-md-1 dragg">
+                <div class="col-md-4-vertical-align dragImg small-circle thumbnail"></div>
+                <div class="col-md-4-vertical-align dragImg small-circle thumbnail"></div>
+                <div class="col-md-4-vertical-align dragImg small-circle thumbnail"></div>
+            </div>
+            <div class="col-md-1 dragg">
+                <div class="col-md-6-vertical-align two-down dragImg small-circle thumbnail"></div>
+                <div class="col-md-6-vertical-align two-down dragImg small-circle thumbnail"></div>
+            </div>
+            <div class="col-md-1 dragg"></div>
+            <div class="col-md-1 dragg"></div>
+        </div>
+        <!-- <canvas class="visualizer" width="640" height="100"></canvas>  -->
+        <!-- <img src="images/me.jpg"> -->
+        <!-- <canvas id="myCanvas" width="400" height="400"></canvas><br> -->
+        <!-- <form class="controls"> -->
+            <!-- <div> -->
+                <!-- <select id="visual" name="visual"></select> -->
+            <!-- </div> -->
+        <!-- </form> -->
+    </div>
+    <script type="text/javascript" src="javascript/audioimages.js"></script>
+    <script type="text/javascript" src="javascript/audio.js"></script>
+    
+    
+</body>
+
+</html>

@@ -147,16 +147,29 @@ $('input').on('click', function() {
 });
 $('#node-selector').mouseenter(function() {
     $('#node-selector2').css({ 'opacity': '1', 'z-index': '3' });
+    $('#gnala').css({ 'opacity': '0', 'z-index': '0' });
 });
 $('#node-selector').mouseleave(function() {
     $('#node-selector2').css({ 'opacity': '0', 'z-index': '0' });
+    $('#gnala').css({ 'opacity': '1', 'z-index': '5' });
 });
 $('#signals').mouseenter(function() {
     $('#signals2').css({ 'opacity': '1', 'z-index': '3' });
+    $('#gnala').css({ 'opacity': '0', 'z-index': '0' });
 });
 $('#signals').mouseleave(function() {
     $('#signals2').css({ 'opacity': '0', 'z-index': '0' });
+    $('#gnala').css({ 'opacity': '1', 'z-index': '5' });
 });
+// $('#recal').mouseenter(function() {
+// 	console.log($('#recal').html());
+// 	if ($('#recal').html() === 'Enter Data') {
+//     	$('#gnala').css({ 'opacity': '1', 'z-index': '3' });
+// 	}
+// });
+// $('#recal').mouseleave(function() {
+//     $('#gnala').css({ 'opacity': '0', 'z-index': '0' });
+// });
 $('#color-sphere').mouseenter(function() {
     $('.circle').css('transform', 'scale(.85)');
 });

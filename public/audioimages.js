@@ -4,6 +4,7 @@ $('.dragImg').offset({ left: 0 });
 function retrieveImages(e) {
     if (e.which == 13 && $(this).find("input").val() !== '') {
         e.preventDefault();
+        $('#gnala').remove();
         $('.container').css('opacity', '1');
         var images = $(this).find("input").val().trim();
         var queryURL = "https://api.gettyimages.com/v3/search/images?page_size=10&phrase=" + images

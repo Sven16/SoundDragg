@@ -1,4 +1,4 @@
-IGNA
+GNALA
 
 
 <strong>quick start:</strong> npm run setup 

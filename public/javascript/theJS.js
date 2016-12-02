@@ -52,7 +52,6 @@ const setApp = () => {
     }
 
     function takeImageAndDoStuff(imageObject) {
-        // console.log(imageObject);
         theImageHoldThing.innerHTML += createImgTagString(imageObject);
         make_base(imageObject.newImgSrc, imageObject.imageID);
         newSrc = imageObject.newImgSrc;
@@ -84,8 +83,6 @@ const setApp = () => {
         // helper: "clone", //cloning what user drags in
         cursor: "move", //cursor indicates moving
     });
-
-    // var gain = 10;
 
     $dropp2.droppable({
         drop: function(event, ui) {

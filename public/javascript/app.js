@@ -144,17 +144,6 @@ FilterSample.play = function(buffer, gain) {
     tremolo.connect(phaser);
     phaser.connect(pingPongDelay);
     pingPongDelay.connect(gainNode);
-    // convolver.connect(gainNode);
-    // filter.connect(overdrive);
-    // filter.connect(analyser);
-    // overdrive.connect(analyser);
-    // moog.connnect(analyser);
-    // moog.connect(distortion);
-    // delay.connect(context.destination);
-    // filter.connect(context.destination);
-    // gain.connect(convolver);
-    // convolver.connect(gainNode);
-    // gainNode.connect(analyser);
     gainNode.connect(limiter);
     limiter.connect(analyser);
     analyser.connect(audioCtx.destination);

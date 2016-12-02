@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 app.set('views', __dirname + '/public');
 
 app.get('/', (req,res) => {
-	res.render('imagetests');
+	res.render('gnala');
 });
 app.get('/old', (req,res) => {
 	res.render('index', {

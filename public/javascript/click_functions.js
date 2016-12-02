@@ -161,15 +161,6 @@ $('#signals').mouseleave(function() {
     $('#signals2').css({ 'opacity': '0', 'z-index': '0' });
     $('#gnala').css({ 'opacity': '1', 'z-index': '5' });
 });
-// $('#recal').mouseenter(function() {
-// 	console.log($('#recal').html());
-// 	if ($('#recal').html() === 'Enter Data') {
-//     	$('#gnala').css({ 'opacity': '1', 'z-index': '3' });
-// 	}
-// });
-// $('#recal').mouseleave(function() {
-//     $('#gnala').css({ 'opacity': '0', 'z-index': '0' });
-// });
 $('#color-sphere').mouseenter(function() {
     $('.circle').css('transform', 'scale(.85)');
 });
@@ -255,8 +246,4 @@ $('.two-down').mouseenter(function() {
     var blip = new Audio('./audio/blip.mp3');
     blip.play();
 });
-// $('.circle2, .circle3, .circle4, .circle5, .circle6').mouseenter(function() {
-//     var blip2 = new Audio('./audio/high_button.mp3');
-//     blip2.volume = 0.1;
-//     blip2.play();
-// });
+

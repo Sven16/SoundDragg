@@ -191,6 +191,21 @@ body {
   right: 25px;
 }
 
+#gnala {
+  color: white;
+  font-family: 'Bungee Hairline', cursive;
+  font-size: 156px;
+  letter-spacing: 5px;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  margin-top: 275px;
+  margin-left: 30.8%;
+  z-index: 5;
+  opacity: 1;
+  transition: all .2s ease-in-out;
+}
+
 #go-right {
   padding-left: 60px;
 }

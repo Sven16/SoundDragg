@@ -212,7 +212,7 @@ body {
   margin-left: 30.8%;
   z-index: 5;
   opacity: 1;
-  transition: all 1s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 #go-right {

@@ -65,6 +65,15 @@ body {
   background-position: center;
   transition: all .2s ease-in-out;
 }
+#circleB {
+  border-radius: 50%;
+  height: 325px;
+  width: 325px;
+  margin-left: 39.5%;
+  margin-top: 239px;
+  position: absolute;
+  z-index: 6;
+}
 
 .circle2 {
   border-radius: 50%;
@@ -203,7 +212,7 @@ body {
   margin-left: 30.8%;
   z-index: 5;
   opacity: 1;
-  transition: all .2s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 #go-right {

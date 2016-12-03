@@ -193,7 +193,7 @@ const setApp = () => {
                 //     var w = new Worker("worker.js");
                 // }
                 var wait = setTimeout(oneSec, 1000);
-
+                
                 function oneSec() {
                     handleFiles(newSrc, chosenWave);
                     loadSound(audio.src);

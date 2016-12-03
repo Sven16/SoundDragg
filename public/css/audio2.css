@@ -478,20 +478,14 @@ input:focus {
 
 #vid-contain {
   position: absolute;
-  width: 225px;
-  overflow: hidden;
-  border-radius: 50%;
+  width: 100%;
+  z-index: -1;
   top: 0;
-  z-index: 3;
-  margin-left: 43.3%;
-  margin-top: 290px;
+  opacity: 0;
 }
 
 video {
-  display: inline;
-  margin: 0 auto;
-  height: 100%;
-  width: 300px;
+  width: 100%;
 }
 
 .visualizer {

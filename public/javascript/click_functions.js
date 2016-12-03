@@ -48,6 +48,11 @@ $('#reset').on('click', function(e) {
     bitcrusher.bypass = 1;
     tremolo.bypass = 1;
     phaser.bypass = 1;
+    var gnala = $('<div id="gnala">GNALA</div>');
+    gnala.css('opacity', '0').appendTo('body');
+    gnala.fadeIn( "slow", function() {
+        gnala.css('opacity', '1');
+    });
     $('#sphere1').css({
         'left': $("#sphere1").data('originalLeft'),
         'top': $("#sphere1").data('origionalTop'),
@@ -128,7 +133,6 @@ $('#reset').on('click', function(e) {
         'background-color': '#999',
         'opacity': '.5'
     });
-    console.log($('#img1').data('originalTop'));
     $('#image0, #image1, #image2, #image3, #image4, #image5, #image6, #image7, #image8, #image9').css({
         'left': '0px',
         'top': '0px',
@@ -161,10 +165,10 @@ $('#signals').mouseleave(function() {
     $('#signals2').css({ 'opacity': '0', 'z-index': '0' });
     $('#gnala').css({ 'opacity': '1', 'z-index': '5' });
 });
-$('#color-sphere').mouseenter(function() {
+$('#circleB').mouseenter(function() {
     $('.circle').css('transform', 'scale(.85)');
 });
-$('#color-sphere').mouseleave(function() {
+$('#circleB').mouseleave(function() {
     $('.circle').css('transform', 'scale(1)');
 });
 $('.circle2').mouseenter(function() {

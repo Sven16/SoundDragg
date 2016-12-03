@@ -19,6 +19,7 @@ function retrieveImages(e) {
             .done(function(response) {
                 $('#reset').css({ 'opacity': '1', 'z-index': '5' });
                 $('.container').css('opacity', '0');
+                $('#vid-contain').css('opacity', '0');
                 var results = response.images; //storing response in a variable
                 $(".dragg .thumbnail").each(function(index, element) {
                     var waveNum = Math.floor(Math.random() * 151) + 50;

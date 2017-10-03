@@ -31,6 +31,6 @@ app.post('/storeimage', jsonParser,(req,res) => {
 	
 });
 
-let server = app.listen(env.NODE_PORT || 8000, env.NODE_IP || 'localhost', () => {
+let server = app.listen(process.env.PORT || env.NODE_PORT || 8000, env.NODE_IP || 'localhost', () => {
 	console.log('At the URL: http://localhost:8000');
 })
